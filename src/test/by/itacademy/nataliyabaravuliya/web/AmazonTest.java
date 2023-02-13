@@ -21,12 +21,28 @@ public class AmazonTest {
     public void testOpenAmazonCart() {
         ChromeDriver driver = new ChromeDriver();
         driver.get(AmazonPage.URL);
-        By btn_login = By.xpath(AmazonPage.BTN_CART);
-        WebElement BTN_CART = driver.findElement(btn_login);
+        By btn_cart = By.xpath(AmazonPage.BTN_CART);
+        WebElement BTN_CART = driver.findElement(btn_cart);
         BTN_CART.click();
         By label = By.xpath(AmazonPage.LABEL);
         WebElement LABEL = driver.findElement(label);
         Assert.assertTrue(LABEL.isDisplayed());
         driver.quit();
+    }
+    @Test
+    public void testOpenAmazonLoginForm(){
+        ChromeDriver driver = new ChromeDriver();
+        driver.get(AmazonPage.URL);
+        By btn_cart = By.xpath(AmazonPage.BTN_CART);
+        WebElement BTN_CART = driver.findElement(btn_cart);
+        BTN_CART.click();
+        By btn_enter = By.xpath(AmazonPage.BTN_ENTER);
+        WebElement BTN_ENTER = driver.findElement(btn_enter);
+        BTN_ENTER.click();
+        By label1 = By.xpath(AmazonPage.LABEL1);
+        WebElement LABEL1 = driver.findElement(label1);
+        Assert.assertTrue(LABEL1.isDisplayed());
+        driver.quit();
+
     }
 }
