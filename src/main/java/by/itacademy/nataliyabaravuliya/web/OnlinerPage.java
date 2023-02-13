@@ -8,4 +8,6 @@ public class OnlinerPage {
 
         public static final String BTN_ENTER  = "/html/body/div[6]/div/div/div/div/div/div/div/div[2]/div/form/div[3]/button";
         public static final String LABEL = "//*[@id=\"auth-container\"]/div/div[2]/div/div[1]";
+        public static final String INPUT = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[1]/div/div[2]/div/div/div/div/input";
+
 }

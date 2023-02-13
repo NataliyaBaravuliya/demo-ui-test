@@ -5,15 +5,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-
 public class OnlinerTest {
     @Test
     public void testOpenOnliner() {
         ChromeDriver driver = new ChromeDriver();
         driver.get(OnlinerPage.URL);
         By copyright = By.xpath(OnlinerPage.COPYRIGHT);
-        WebElement element = driver.findElement(copyright);
-        Assert.assertTrue(element.isDisplayed());
+        WebElement COPYRIGHT = driver.findElement(copyright);
+        Assert.assertTrue(COPYRIGHT.isDisplayed());
         driver.quit();
     }
 
@@ -22,11 +21,11 @@ public class OnlinerTest {
         ChromeDriver driver = new ChromeDriver();
         driver.get(OnlinerPage.URL);
         By btn_login = By.xpath(OnlinerPage.BTN_LOGIN);
-        WebElement element = driver.findElement(btn_login);
-        element.click();
+        WebElement BTN_LOGIN = driver.findElement(btn_login);
+        BTN_LOGIN.click();
         By label = By.xpath(OnlinerPage.LABEL);
-        WebElement element1 = driver.findElement(label);
-        Assert.assertTrue(element1.isDisplayed());
+        WebElement LABEL = driver.findElement(label);
+        Assert.assertTrue(LABEL.isDisplayed());
         driver.quit();
     }
 
@@ -35,16 +34,31 @@ public class OnlinerTest {
         ChromeDriver driver = new ChromeDriver();
         driver.get(OnlinerPage.URL);
         By btn_login = By.xpath(OnlinerPage.BTN_LOGIN);
-        WebElement element = driver.findElement(btn_login);
-        element.click();
+        WebElement BTN_LOGIN = driver.findElement(btn_login);
+        BTN_LOGIN.click();
         By btn_enter = By.xpath(OnlinerPage.BTN_ENTER);
-        WebElement element2 = driver.findElement(btn_enter);
-        element2.click();
-        //Assert.assertTrue(element1.isDisplayed());
-        // driver.quit();
+        WebElement BTN_ENTER = driver.findElement(btn_enter);
+        BTN_ENTER.click();
+        //Assert.assertTrue(BTN_ENTER.isDisplayed());
+        driver.quit();
     }
 
+    @Test
+    public void testOnlinerLoginFormWithEmptyPassword() {
+        ChromeDriver driver = new ChromeDriver();
+        driver.get(OnlinerPage.URL);
+        By btn_login = By.xpath(OnlinerPage.BTN_LOGIN);
+        WebElement BTN_LOGIN = driver.findElement(btn_login);
+        BTN_LOGIN.click();
+        By input = By.xpath(OnlinerPage.INPUT);
+        WebElement INPUT = driver.findElement(input);
+        INPUT.sendKeys("test@gmail.com");
+        By btn_enter = By.xpath(OnlinerPage.BTN_ENTER);
+        WebElement BTN_ENTER = driver.findElement(btn_enter);
+        BTN_ENTER.click();
+        //Выполнить проверку
+        driver.quit();
 
-    //element1.sendKeys("test@gmail.com");
+    }
 }
 
