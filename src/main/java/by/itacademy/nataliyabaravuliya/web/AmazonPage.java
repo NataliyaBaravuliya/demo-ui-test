@@ -7,5 +7,5 @@ public class AmazonPage {
     public static final String BTN_ENTER  = "//*[@id=\"a-autoid-0-announce\"]";
     public static final String LABEL = "//*[@id=\"sc-active-cart\"]/div/div/div[2]/div[1]/h2";
     public static final String LABEL1 = "//*[@id=\"authportal-main-section\"]/div[2]/div/div[1]/form/div/div/div/h1";
-    public static final String INPUT = "";
+    public static final String BTN_CONTINUE = "//*[@id=\"continue\"]";
 }
